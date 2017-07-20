@@ -15,11 +15,13 @@ case ${#subs[@]} in
 			do
 				for SUB4 in {1..255} 
 				do
+					(
 					ping -c 1 $SUB1"."$SUB2"."$SUB3"."$SUB4 &>/dev/null
 					if [ $? -eq 0 ];
 					then
 						echo ping to $SUB1"."$SUB2"."$SUB3"."$SUB4 successful
 					fi
+					)&
 				done
 			done
 		done
@@ -31,11 +33,13 @@ case ${#subs[@]} in
 		do
 			for SUB4 in {1..255}
 			do
+				(
 				ping -c 1 $SUB1"."$SUB2"."$SUB3"."$SUB4 &>/dev/null
 				if [ $? -eq 0 ];
 				then
 					echo ping to $SUB1"."$SUB2"."$SUB3"."$SUB4 successful
 				fi
+				)&
 			done
 		done
 		;;
@@ -45,11 +49,13 @@ case ${#subs[@]} in
 		SUB3=${subs[2]}
 		for SUB4 in {1..255}
 		do 
+			(
 			ping -c 1 $SUB1"."$SUB2"."$SUB3"."$SUB4 &>/dev/null
 			if [ $? -eq 0 ];
 			then
 				echo ping to $SUB1"."$SUB2"."$SUB3"."$SUB4 successful
 			fi
+			)&
 		done	  
 		;;
 	4)
