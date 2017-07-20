@@ -25,6 +25,7 @@ case ${#subs[@]} in
 				done
 			done
 		done
+		wait
 		;;
 	2)
 		SUB1=${subs[0]}
@@ -42,6 +43,7 @@ case ${#subs[@]} in
 				)&
 			done
 		done
+		wait
 		;;
 	3)
 		SUB1=${subs[0]}
@@ -57,6 +59,7 @@ case ${#subs[@]} in
 			fi
 			)&
 		done	  
+		wait
 		;;
 	4)
 
